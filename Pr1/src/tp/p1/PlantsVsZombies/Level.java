@@ -10,4 +10,22 @@ public enum Level{
 		this.numZombies = num;
 		this.frequency = f;
 	}
+
+	public int getNumZombies() {
+		return numZombies;
+	}
+
+	public void setNumZombies(int numZombies) {
+		this.numZombies = numZombies;
+	}
+
+	public double getFrequency() {
+		return frequency;
+	}
+
+	public void setFrequency(double frequency) {
+		this.frequency = frequency;
+	}
+	
+	
 }
