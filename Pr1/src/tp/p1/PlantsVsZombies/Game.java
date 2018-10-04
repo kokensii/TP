@@ -7,15 +7,22 @@ public class Game {
 	private SunflowerList sunflowerList;
 	private PeashooterList peashooterList;
 	private ZombieList zombieList;
-	private int cont, suns;
+	private int contCicles;
 	private Random rand;
+	private SuncoinManager managerSuncoin;
+	private ZombieManager managerZombie;
 	
 	public Game() {
-		this.cont = 0;
-		this.suns = 50;
+		this.contCicles = 0;
 	}
 	
 	public void update() {
+		
+	}
+	
+	public String toString() {
+		GamePrinter gamePrinter; // meter la clase game a gameprinter 
+		return null;
 		
 	}
 	
