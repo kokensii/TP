@@ -12,7 +12,7 @@ public class Game {
 	private ZombieManager managerZombie;
 	private Random rand;
 	
-	public Game() {
+	public Game(Level level, Game game) {
 		this.cont = 0;
 	}
 	
