@@ -5,7 +5,7 @@ public class Peashooter {
 	private int strength, frequency, harm, cost, x, y;
 	private Game game;
 	
-	public Peashooter(int x, int y,Game game) {
+	public Peashooter(int x, int y, Game game) {
 		this.strength = 3;
 		this.frequency = 1;
 		this.harm = 1;

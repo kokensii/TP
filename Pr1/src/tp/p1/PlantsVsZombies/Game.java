@@ -7,16 +7,17 @@ public class Game {
 	private SunflowerList sunflowerList;
 	private PeashooterList peashooterList;
 	private ZombieList zombieList;
-	private int cont, suns;
+	private int cont;
+	private SuncoinManager managerSuns;
+	private ZombieManager managerZombie;
 	private Random rand;
 	
 	public Game() {
 		this.cont = 0;
-		this.suns = 50;
 	}
 	
 	public void update() {
-		
+		//Actualizar el tablero recorriendo las listas
 	}
 	
 }
