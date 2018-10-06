@@ -7,17 +7,22 @@ public class Game {
 	private SunflowerList sunflowerList;
 	private PeashooterList peashooterList;
 	private ZombieList zombieList;
-	private int cont;
+	private int contCycles;
 	private SuncoinManager managerSuns;
 	private ZombieManager managerZombie;
 	private Random rand;
+	private GamePrinter gamePrinter;
 	
-	public Game(Level level, Game game) {
-		this.cont = 0;
+	public Game(Level level, Random rand) {
+		this.contCycles = 0;
 	}
 	
 	public void update() {
 		//Actualizar el tablero recorriendo las listas
+	}
+	
+	public String toString() {  // este metodo llamara al gameprinter para dibujar el tablero 	
+		return gamePrinter.draw(this);
 	}
 	
 }

@@ -7,16 +7,16 @@ public class Controller {
 	private Game game;
 	private Scanner in;
 	
-	public Controller(Game game, Scanner in) {
+	public Controller(Game game) {
 		this.game = game;
 		this.in = in;
 	}
 	
-	public void run() {
+	public void run() { // solicitar ordenes al usuario y ejecutarlas
 		String parts;
 		String[] command;
 		
-		System.out.println(game.toString); // imprimir el tablero
+		System.out.println(game.toString()); // imprimir el tablero
 		
 		do {
 			System.out.println("Command >");
@@ -35,6 +35,18 @@ public class Controller {
 			else if(command[0].equals("LIST")) {
 				System.out.println("[S]unflower: Cost: 20 suncoins Harm: 0\r\n" + 
 						"[P]eashooter: Cost: 50 suncoins Harm: 1");
+			}
+			else if (command[0].equals("ADD")) {
+				
+			}
+			else if (command[0].equals("RESET")) {
+				
+			}
+			else if (command[0].equals("NONE")) {
+				
+			}
+			else if (command[0].equals("EXIT")) {
+				
 			}
 		}while(0 == 1);
 		
@@ -56,8 +68,4 @@ public class Controller {
 	public void setIn(Scanner in) {
 		this.in = in;
 	}*/
-	
-	
-
-	
 }

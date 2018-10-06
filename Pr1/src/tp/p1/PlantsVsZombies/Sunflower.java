@@ -14,7 +14,7 @@ public class Sunflower {
 		this.y = y;
 		this.game = game;
 	}
-
+	
 	public int getCost() {
 		return cost;
 	}
@@ -69,6 +69,16 @@ public class Sunflower {
 
 	public void setGame(Game game) {
 		this.game = game;
+	}
+	
+	// Metodo para generar soles, habra que verificar si se puede o no generar 
+	public int generateSuns(Game game) {
+		int suns = 0;
+		boolean generate;
+		if(cost >= 20) { // mirar si esto va aqui o no 
+		}
+		
+		return suns;
 	}
 	
 	

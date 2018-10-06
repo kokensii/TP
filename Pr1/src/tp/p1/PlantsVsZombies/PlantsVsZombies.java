@@ -6,6 +6,7 @@ import java.util.Scanner;
 public class PlantsVsZombies {
 	
 	public static void main(String[] args) {
+		//System.out.println("HOLA");
 		//Comparar el nivel con un equals para ver a que nivel entrar
 		//Mirar que no haya más argumentos que 2 y menos que 1
 		//La semilla hay que convertirla en un entero
@@ -16,7 +17,7 @@ public class PlantsVsZombies {
 		//Crear el controller pasandole el Game
 		//Puedes meter el Scanner aquí o en el Controller
 		//controller.run()
-		Level level;
+		Level level = null;
 		Random rand;
 		long seed;
 		Game game;
@@ -32,10 +33,11 @@ public class PlantsVsZombies {
 			else if(args[0].equals("INSANE")) level = Level.INSANE;
 			
 			if(args.length == 2)
-				seed = args[1];
+				seed = Integer.parseInt(args[1]); //Pasado el string a int
 			else{
 				seed = new Random().nextInt(1000);
 			}
+	
 			rand = new Random(seed);
 			game = new Game(level, rand);
 			controller = new Controller(game);

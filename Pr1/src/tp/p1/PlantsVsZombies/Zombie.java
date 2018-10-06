@@ -62,5 +62,8 @@ public class Zombie {
 		this.game = game;
 	}
 	
+	public void moveZombie(Game game) {
+		
+	}
 	
 }

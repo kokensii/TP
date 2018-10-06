@@ -37,5 +37,4 @@ public enum Level{
 		else f = 0.3;
 		return f;
 	}
-	
 }
