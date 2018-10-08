@@ -77,7 +77,6 @@ public class Sunflower {
 		boolean generate;
 		if(cost >= 20) { // mirar si esto va aqui o no 
 		}
-		
 		return suns;
 	}
 	

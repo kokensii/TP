@@ -71,5 +71,9 @@ public class Peashooter {
 		this.game = game;
 	}
 	
+	public void disparar() {
+		
+	}
+	
 	
 }

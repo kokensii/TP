@@ -37,7 +37,7 @@ public class PlantsVsZombies {
 			else{
 				seed = new Random().nextInt(1000);
 			}
-	
+			
 			rand = new Random(seed);
 			game = new Game(level, rand);
 			controller = new Controller(game);

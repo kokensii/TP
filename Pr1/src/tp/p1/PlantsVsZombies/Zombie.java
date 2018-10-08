@@ -62,8 +62,14 @@ public class Zombie {
 		this.game = game;
 	}
 	
-	public void moveZombie(Game game) {
+	public void moveZombie() {
 		
 	}
+	
+	public void restarOSumarVida() {
+		
+	}
+	
+	
 	
 }

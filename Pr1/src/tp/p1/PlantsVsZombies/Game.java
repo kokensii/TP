@@ -22,7 +22,8 @@ public class Game {
 	}
 	
 	public String toString() {  // este metodo llamara al gameprinter para dibujar el tablero 	
-		return gamePrinter.draw(this);
+		gamePrinter.draw(this);
+		return null; // revisar ESTO 
 	}
 	
 }

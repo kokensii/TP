@@ -5,8 +5,7 @@ public class GamePrinter {
 	
 	
 	// EN EL ENUNCIADO DICE QUE HAY UN METODO TOSTRING, YO CREO QUE ES EL DRAW
-	public String draw(Game game) {
-		String str = null; // hay que usar algo asi aunque no se si se devuelve str o void 
+	public void draw(Game game) { 
 		System.out.println("Number of cycles: ");
 		System.out.println("Sun coins: ");
 		System.out.println("Remaining zombies: \n");
@@ -29,6 +28,5 @@ public class GamePrinter {
 		}
 		
 		System.out.println("\nCommand >");
-		return str; 
 	}
 }
