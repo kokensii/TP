@@ -21,5 +21,16 @@ public class SunflowerList {
 		sunflowerList.remove(this.cont);
 		this.cont--;
 	}
+	
+	public int getSize() {
+		return sunflowerList.size();
+	}
+	
+	public boolean isEmpty() {
+		return sunflowerList.isEmpty();
+	}
+	
+	
+	
 
 }

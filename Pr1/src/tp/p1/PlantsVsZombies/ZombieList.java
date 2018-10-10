@@ -21,5 +21,13 @@ public class ZombieList {
 		zombieList.remove(this.cont);
 		this.cont--;
 	}
+	
+	public int getSize() {
+		return zombieList.size();
+	}
+	
+	public boolean isEmpty() {
+		return zombieList.isEmpty();
+	}
 
 }

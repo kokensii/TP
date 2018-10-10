@@ -27,4 +27,28 @@ public class Game {
 		return gamePrinter.toString();
 	}
 	
+	//ESTA MAL PORQUE SOLO MIRA LAS LISTAS, NO ESTA MIRANDO POR HUECOS EN EL TABLERO 
+	//ME FALTA UN TABLERO
+	public boolean isEmptyToInsert(int x,int y) { // metodo para validar que se puede insertar un elemento en los arrays
+		boolean validar = false;
+		/*if (sunflowerList.isEmpty() && zombieList.isEmpty() && peashooterList.isEmpty()) {
+			validar = true;
+		}*/
+		if(gamePrinter.board[x][y].isEmpty())  validar = true;
+		
+		//gamePrinter.board[x][y].isEmpty(); para acceder a una pos del tablero
+		return validar;
+	}
+	
+	public boolean DarBolazo(int x, int y) {
+		boolean si = false;
+		//quiero ver si hay un zombie pero creo que esta mal puesto 
+		if(gamePrinter.board[x][y].equals(zombieList/*Zombie*/)) {
+			si = true; // se manda el true para dar el bolazo si es un zombie 
+		}
+		return si;
+	}
+	
+	
+	
 }

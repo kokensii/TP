@@ -22,6 +22,14 @@ public class PeashooterList {
 		this.cont--;
 	}
 	
+	public int getSize() {
+		return peashooterList.size();
+	}
+	
+	public boolean isEmpty() {
+		return peashooterList.isEmpty();
+	}
+	
 	//LOS METODOS O MOVIMIENTOS DE LOS ARRAYS DONDE VAN?
 	
 
