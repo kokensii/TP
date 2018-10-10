@@ -19,8 +19,10 @@ public class Game {
 	
 	public void update() {
 		//Actualizar el tablero recorriendo las listas
+		//PISTAS PARA REALIZAR EL UPDATE, PREGUNTAR EN TUTORIA
 	}
 	
+	//PREGUNTAR TUTORIA
 	public String toString() {  // este metodo llamara al gameprinter para dibujar el tablero 	
 		gamePrinter.draw(this);
 		return null; // revisar ESTO 

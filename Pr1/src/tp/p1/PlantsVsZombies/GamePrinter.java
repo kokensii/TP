@@ -14,6 +14,8 @@ public class GamePrinter {
 		//O ASI??
 		System.out.println("Number of cycles: \n");
 		System.out.println("Sun coins: \n");
+		
+		
 		System.out.println("Remaining zombies: \n");
 		
 		System.out.println("-------------------------------------------------------------------------");
