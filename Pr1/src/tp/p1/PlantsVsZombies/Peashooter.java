@@ -10,13 +10,6 @@ public class Peashooter {
 	private Game game;
 	
 	public Peashooter(int x, int y, Game game) {
-<<<<<<< HEAD
-		this.strength = 3; // const
-		this.frequency = 1; //cnst
-		this.harm = 1; //const
-		this.cost = 50; //const
-=======
->>>>>>> 180f13475656638052a39aa25c31fa21006f03d8
 		this.x = x;
 		this.y = y;
 		this.hp = STRENGHT;
@@ -55,11 +48,7 @@ public class Peashooter {
 		this.game = game;
 	}
 	
-<<<<<<< HEAD
-	public void disparar() { // PREGUNTAR POR ESTOS METODOS SI VAN AQUI O VAN EN EL GAME (SON PARTE DEL RUN O DEL UPDATE)
-=======
 	public void update() {
->>>>>>> 180f13475656638052a39aa25c31fa21006f03d8
 		
 	}
 	
