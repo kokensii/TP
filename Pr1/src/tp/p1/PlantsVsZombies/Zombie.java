@@ -2,40 +2,17 @@ package tp.p1.PlantsVsZombies;
 
 public class Zombie {
 
-	private int strength, harm, speed, x, y;
+	static final int STRENGHT = 5;
+	static final int DAMAGE = 1;
+	static final int SPEED = 2;
+	private int x, y, hp;
 	private Game game;
 	
 	public Zombie(int x, int y,Game game) {
-		this.strength = 5;
-		this.harm = 1;
-		this.speed = 2; //1 casilla cad dos ciclos
 		this.x = x;
 		this.y = y;
+		this.hp = STRENGHT;
 		this.game = game;
-	}
-
-	public int getStrength() {
-		return strength;
-	}
-
-	public void setStrength(int strength) {
-		this.strength = strength;
-	}
-
-	public int getHarm() {
-		return harm;
-	}
-
-	public void setHarm(int harm) {
-		this.harm = harm;
-	}
-
-	public int getSpeed() {
-		return speed;
-	}
-
-	public void setSpeed(int speed) {
-		this.speed = speed;
 	}
 
 	public int getX() {
@@ -52,6 +29,14 @@ public class Zombie {
 
 	public void setY(int y) {
 		this.y = y;
+	}
+	
+	public int getHp(){
+		return this.hp;
+	}
+	
+	public void setHp(int hp){
+		this.hp = hp;
 	}
 
 	public Game getGame() {
@@ -70,6 +55,8 @@ public class Zombie {
 		
 	}
 	
-	
+	public void update(){
+		
+	}
 	
 }

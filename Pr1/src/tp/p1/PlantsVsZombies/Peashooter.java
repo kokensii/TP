@@ -2,49 +2,18 @@ package tp.p1.PlantsVsZombies;
 
 public class Peashooter {
 	
-	private int strength, frequency, harm, cost, x, y;
+	static final int STRENGHT = 3;
+	static final int FREQUENCY = 1;
+	static final int DAMAGE = 1;
+	static final int COST = 1;
+	private int x, y, hp;
 	private Game game;
 	
 	public Peashooter(int x, int y, Game game) {
-		this.strength = 3;
-		this.frequency = 1;
-		this.harm = 1;
-		this.cost = 50;
 		this.x = x;
 		this.y = y;
+		this.hp = STRENGHT;
 		this.game = game;
-	}
-
-	public int getStrength() {
-		return strength;
-	}
-
-	public void setStrength(int strength) {
-		this.strength = strength;
-	}
-
-	public int getFrequency() {
-		return frequency;
-	}
-
-	public void setFrequency(int frequency) {
-		this.frequency = frequency;
-	}
-
-	public int getHarm() {
-		return harm;
-	}
-
-	public void setHarm(int harm) {
-		this.harm = harm;
-	}
-
-	public int getCost() {
-		return cost;
-	}
-
-	public void setCost(int cost) {
-		this.cost = cost;
 	}
 
 	public int getX() {
@@ -62,6 +31,14 @@ public class Peashooter {
 	public void setY(int y) {
 		this.y = y;
 	}
+	
+	public int getHp(){
+		return this.hp;
+	}
+	
+	public void setHp(int hp){
+		this.hp = hp;
+	}
 
 	public Game getGame() {
 		return game;
@@ -71,7 +48,7 @@ public class Peashooter {
 		this.game = game;
 	}
 	
-	public void disparar() {
+	public void update() {
 		
 	}
 	
