@@ -3,11 +3,17 @@ package tp.p1.PlantsVsZombies;
 public class GamePrinter {
 	private Game game;
 	
-	
-	// EN EL ENUNCIADO DICE QUE HAY UN METODO TOSTRING, YO CREO QUE ES EL DRAW
+	// EN EL ENUNCIADO DICE QUE HAY UN METODO TO STRING, YO CREO QUE ES EL DRAW
 	public void draw(Game game) { 
-		System.out.println("Number of cycles: ");
-		System.out.println("Sun coins: ");
+		//ASI?
+		String cadena;
+		cadena = "Number of cycles: \n";
+		cadena += "Sun coins: \n";
+		cadena += "Remaining zombies: \n";
+		
+		//O ASI??
+		System.out.println("Number of cycles: \n");
+		System.out.println("Sun coins: \n");
 		System.out.println("Remaining zombies: \n");
 		
 		System.out.println("-------------------------------------------------------------------------");

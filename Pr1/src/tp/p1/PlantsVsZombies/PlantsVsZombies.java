@@ -22,7 +22,8 @@ public class PlantsVsZombies {
 		long seed;
 		Game game;
 		Controller controller;
-		Scanner in;
+		Scanner in; // USAR AQUI?
+		
 		
 		if((args.length < 1) || (args.length > 2)){
 			System.out.println("ERROR al introducir los argumentos");

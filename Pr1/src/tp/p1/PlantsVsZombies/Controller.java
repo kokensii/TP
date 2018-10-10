@@ -53,19 +53,5 @@ public class Controller {
 	}
 	
 
-	/*public Game getGame() {
-		return this.game;
-	}
 	
-	public void setGame(Game game) {
-		this.game = game;
-	}
-
-	public Scanner getIn() {
-		return in;
-	}
-
-	public void setIn(Scanner in) {
-		this.in = in;
-	}*/
 }

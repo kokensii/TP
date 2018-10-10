@@ -6,10 +6,10 @@ public class Peashooter {
 	private Game game;
 	
 	public Peashooter(int x, int y, Game game) {
-		this.strength = 3;
-		this.frequency = 1;
-		this.harm = 1;
-		this.cost = 50;
+		this.strength = 3; // const
+		this.frequency = 1; //cnst
+		this.harm = 1; //const
+		this.cost = 50; //const
 		this.x = x;
 		this.y = y;
 		this.game = game;
@@ -71,7 +71,7 @@ public class Peashooter {
 		this.game = game;
 	}
 	
-	public void disparar() {
+	public void disparar() { // PREGUNTAR POR ESTOS METODOS SI VAN AQUI O VAN EN EL GAME (SON PARTE DEL RUN O DEL UPDATE)
 		
 	}
 	

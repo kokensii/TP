@@ -7,7 +7,7 @@ public class PeashooterList {
 	private ArrayList<Peashooter> peashooterList;
 	private int cont;
 	
-	public PeashooterList() {
+	public PeashooterList(Game game) {
 		peashooterList = new ArrayList<Peashooter>();
 		cont = 0;
 	}
@@ -21,5 +21,8 @@ public class PeashooterList {
 		peashooterList.remove(this.cont);
 		this.cont--;
 	}
+	
+	//LOS METODOS O MOVIMIENTOS DE LOS ARRAYS DONDE VAN?
+	
 
 }
