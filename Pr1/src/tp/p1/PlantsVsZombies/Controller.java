@@ -40,15 +40,24 @@ public class Controller {
 				
 			}
 			else if (command[0].equals("RESET")) {
+				//llamar al constructor del game para que inicialice las listas
 				
 			}
 			else if (command[0].equals("NONE")) {
+				//dejar pasar un ciclo creo
 				
 			}
 			else if (command[0].equals("EXIT")) {
+				//salir del juego 
 				
 			}
+			else  System.out.println("El comando introducido es incorrecto ");
+			
 		}while(0 == 1);
+		
+	}
+	
+	public void computerAction() {
 		
 	}
 	

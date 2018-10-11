@@ -49,6 +49,10 @@ public class Sunflower {
 		this.game = game;
 	}
 	
+	public static int getCost() {
+		return COST;
+	}
+	
 	// Metodo para generar soles, habra que verificar si se puede o no generar 
 	/*public int generateSuns(Game game) {
 		int suns = 0;

@@ -41,7 +41,7 @@ public class PlantsVsZombies {
 			
 			rand = new Random(seed);
 			game = new Game(level, rand);
-			controller = new Controller(game);
+			controller = new Controller(game); // pasar el scanner o hacerlo en controller 
 			controller.run();
 		}
 	}

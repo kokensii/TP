@@ -22,7 +22,7 @@ public class GamePrinter{
 			for(int j = 0; j < dimY; j++) {
 				
 				board[i][j] =  space;
-				
+				//llegar a las listas a traves del game 
 				// TODO Fill the board with simulation objects
 				
 			}
