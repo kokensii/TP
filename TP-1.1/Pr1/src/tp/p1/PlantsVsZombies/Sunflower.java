@@ -63,6 +63,8 @@ public class Sunflower {
 	}*/
 	
 	public void update(){
+		//en este metodo se generara el numero de soles por ciclo que sea 
+		// y se actualizara la informacion del girasol 
 		
 	}
 	

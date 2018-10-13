@@ -16,7 +16,6 @@ public class Game {
 	
 	public Game(Level level, Random rand) {
 		this.level = level;
-		
 		this.contCycles = 0;
 	}
 	
@@ -77,7 +76,18 @@ public class Game {
 		if(gamePrinter.board[x][y].equals(zombieList/*Zombie*/)) {
 			si = true; // se manda el true para dar el bolazo si es un zombie 
 		}
+		
 		return si;
+	}
+	
+	public void boom() { // intento de lanzar el guisante 
+		for(int i = 1; i < gamePrinter.board.size();i++) {
+			for(int j = 1; j < gamePrinter.board.size();j++) {
+				if(gamePrinter.board[i][j].equals(isZombie(i,j))) {
+					//quitarle vida al zombie 
+				}
+			}
+		}
 	}
 	
 	
