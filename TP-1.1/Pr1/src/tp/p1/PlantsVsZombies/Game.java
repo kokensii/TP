@@ -70,6 +70,7 @@ public class Game {
 		this.managerZombie = new ZombieManager(level);
 	}
 	
+	//mirar porque esta mal creo no se si puede servir 
 	public boolean DarBolazo(int x, int y) {
 		boolean si = false;
 		//quiero ver si hay un zombie pero creo que esta mal puesto 
@@ -80,6 +81,7 @@ public class Game {
 		return si;
 	}
 	
+	//mirar porque esta mal creo, no se si puede valer 
 	public void boom() { // intento de lanzar el guisante 
 		for(int i = 1; i < gamePrinter.board.size();i++) {
 			for(int j = 1; j < gamePrinter.board.size();j++) {
@@ -89,7 +91,5 @@ public class Game {
 			}
 		}
 	}
-	
-	
-	
+
 }

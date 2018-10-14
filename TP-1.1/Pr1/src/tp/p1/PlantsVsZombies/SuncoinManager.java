@@ -10,6 +10,11 @@ public class SuncoinManager { // clase que lleva el control de los suncoins
 		this.sunCoins = 50;
 	}
 	
+	public int restarSoles(int sunCoinsQueRestar) {
+		return this.sunCoins = this.sunCoins - sunCoinsQueRestar;
+	}
 	
-	
+	public int sumarSoles(int sunCoinsQueSumar) {
+		return this.sunCoins = this.sunCoins + sunCoinsQueSumar;
+	}
 }
