@@ -30,7 +30,13 @@ public class SunflowerList {
 		return sunflowerList.isEmpty();
 	}
 	
-	
+	public boolean isSunflower(int x, int y) {
+		boolean isS = false;
+		for(int i = 0; i < sunflowerList.size() && !isS; ++i) {
+			if(sunflowerList.get(i).getX() == x && sunflowerList.get(i).getY() == y) isS = true;
+		}
+		return isS;
+	}
 	
 
 }

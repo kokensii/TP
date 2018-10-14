@@ -24,6 +24,7 @@ public class PlantsVsZombies {
 		Controller controller;
 		Scanner in; // USAR AQUI?
 		
+		//in = new Scanner(System.in);
 		
 		if((args.length < 1) || (args.length > 2)){
 			System.out.println("ERROR al introducir los argumentos");
@@ -41,7 +42,7 @@ public class PlantsVsZombies {
 			
 			rand = new Random(seed);
 			game = new Game(level, rand);
-			controller = new Controller(game); // pasar el scanner o hacerlo en controller 
+			controller = new Controller(game);
 			controller.run();
 		}
 	}

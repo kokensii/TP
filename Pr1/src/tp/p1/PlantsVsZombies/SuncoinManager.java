@@ -2,16 +2,19 @@ package tp.p1.PlantsVsZombies;
 
 public class SuncoinManager { // clase que lleva el control de los suncoins 
 	
+	static final int SUNS = 50;
 	private int sunCoins;
-	Sunflower sunflower;
 	
-	/*public int subtractSunCoins(int coste) {
-		int cost = sunflower.getCost();
-		cost = cost - coste;
-		return cost;
+	
+	public void initSuns() { //Inicializamos el numero de soles a 50, que son los predeterminados
+		this.sunCoins = 50;
 	}
 	
-	public int addSunCoins(int coste) {
-		return 0;
-	}*/
+	public int restarSoles(int sunCoinsQueRestar) {
+		return this.sunCoins = this.sunCoins - sunCoinsQueRestar;
+	}
+	
+	public int sumarSoles(int sunCoinsQueSumar) {
+		return this.sunCoins = this.sunCoins + sunCoinsQueSumar;
+	}
 }

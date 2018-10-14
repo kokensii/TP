@@ -6,6 +6,7 @@ public class Controller {
 	
 	private Game game;
 	private Scanner in;
+	//hay que hacer un set in con el Scanner???
 	
 	public Controller(Game game) {
 		this.game = game;
@@ -40,24 +41,16 @@ public class Controller {
 				
 			}
 			else if (command[0].equals("RESET")) {
-				//llamar al constructor del game para que inicialice las listas
 				
 			}
 			else if (command[0].equals("NONE")) {
-				//dejar pasar un ciclo creo
 				
 			}
 			else if (command[0].equals("EXIT")) {
-				//salir del juego 
 				
 			}
-			else  System.out.println("El comando introducido es incorrecto ");
-			
+			else System.out.println("error");
 		}while(0 == 1);
-		
-	}
-	
-	public void computerAction() {
 		
 	}
 	

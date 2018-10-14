@@ -7,7 +7,7 @@ public class PeashooterList {
 	private ArrayList<Peashooter> peashooterList;
 	private int cont;
 	
-	public PeashooterList(Game game) {
+	public PeashooterList() {
 		peashooterList = new ArrayList<Peashooter>();
 		cont = 0;
 	}
@@ -30,7 +30,19 @@ public class PeashooterList {
 		return peashooterList.isEmpty();
 	}
 	
+	public boolean isPeashooter(int x, int y) {
+		boolean isP = false;
+		for(int i = 0; i < peashooterList.size() && !isP; ++i) {
+			if(peashooterList.get(i).getX() == x && peashooterList.get(i).getY() == y) isP = true;
+		}
+		return isP;
+	}
+	
+	//add
+	
 	//LOS METODOS O MOVIMIENTOS DE LOS ARRAYS DONDE VAN?
+	
+
 	
 
 }

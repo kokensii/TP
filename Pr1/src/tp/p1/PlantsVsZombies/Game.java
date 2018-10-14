@@ -11,9 +11,11 @@ public class Game {
 	private SuncoinManager managerSuns;
 	private ZombieManager managerZombie;
 	private Random rand;
+	private Level level;
 	private GamePrinter gamePrinter;
 	
 	public Game(Level level, Random rand) {
+		this.level = level;
 		this.contCycles = 0;
 	}
 	
@@ -22,33 +24,88 @@ public class Game {
 		//PISTAS PARA REALIZAR EL UPDATE, PREGUNTAR EN TUTORIA
 	}
 	
+	public int getContCycles() {
+		return contCycles;
+	}
+
+	public void setContCycles(int contCycles) {
+		this.contCycles = contCycles;
+	}
+
+	public Level getLevel() {
+		return level;
+	}
+
+	public void setLevel(Level level) {
+		this.level = level;
+	}
+	
 	//PREGUNTAR TUTORIA
 	public String toString() {  // este metodo llamara al gameprinter para dibujar el tablero 	
 		return gamePrinter.toString();
 	}
 	
-	//ESTA MAL PORQUE SOLO MIRA LAS LISTAS, NO ESTA MIRANDO POR HUECOS EN EL TABLERO 
-	//ME FALTA UN TABLERO
-	public boolean isEmptyToInsert(int x,int y) { // metodo para validar que se puede insertar un elemento en los arrays
-		boolean validar = false;
-		/*if (sunflowerList.isEmpty() && zombieList.isEmpty() && peashooterList.isEmpty()) {
-			validar = true;
-		}*/
-		if(gamePrinter.board[x][y].isEmpty())  validar = true;
-		
-		//gamePrinter.board[x][y].isEmpty(); para acceder a una pos del tablero
-		return validar;
+	public boolean isEmpty(int x, int y) {
+		if(!peashooterList.isPeashooter(x, y) || !sunflowerList.isSunflower(x, y) ||
+			!zombieList.isZombie(x, y)) return true;
+		return false;
 	}
 	
+	public boolean isZombie(int x, int y) {//Comprobamos si en la posicion x, y se encuentra un zombie
+		if(zombieList.isZombie(x, y)) return true;
+		return false;
+	}
+	
+	public boolean isPeashooter(int x, int y) {//Comprobamos si en la posicion x, y se encuentra un peashooter
+		if(peashooterList.isPeashooter(x, y)) return true;
+		return false;
+	}
+	
+	public boolean isSunflower(int x, int y) {//Comprobamos si en la posicion x, y se encuentra un sunflower
+		if(sunflowerList.isSunflower(x, y)) return true;
+		return false;
+	}
+	
+	private void initPeashooterList() {
+		this.peashooterList = new PeashooterList();
+	}
+	
+	private void initSunflowerList() {
+		this.sunflowerList = new SunflowerList();
+	}
+	
+	private void initZombieList() {
+		this.zombieList = new ZombieList();
+	}
+	
+	private void initSuncoinManager() {
+		this.managerSuns = new SuncoinManager();
+	}
+	
+	private void initZombieManager() {
+		this.managerZombie = new ZombieManager(level);
+	}
+	
+	//mirar porque esta mal creo no se si puede servir 
 	public boolean DarBolazo(int x, int y) {
 		boolean si = false;
 		//quiero ver si hay un zombie pero creo que esta mal puesto 
 		if(gamePrinter.board[x][y].equals(zombieList/*Zombie*/)) {
 			si = true; // se manda el true para dar el bolazo si es un zombie 
 		}
+		
 		return si;
 	}
 	
-	
+	//mirar porque esta mal creo, no se si puede valer 
+	public void boom() { // intento de lanzar el guisante 
+		for(int i = 1; i < gamePrinter.board.length;i++) {
+			for(int j = 1; j < gamePrinter.board.length;j++) {
+				if(gamePrinter.board[i][j].equals(isZombie(i,j))) {
+					this.zombieList.restarVida(i, j);
+				}
+			}
+		}
+	}
 	
 }
