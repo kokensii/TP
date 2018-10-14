@@ -108,4 +108,17 @@ public class Game {
 		}
 	}
 	
+	public void avanzarZombie() {
+		// pensar como hacer para avanzar el zombie,
+		//si este metodo es para uno o para todos?
+		//recorriendo el tablero y si es zombie y esta en el ciclo
+		//correcto avanzamos? o como?
+		
+		
+	}
+	
+	public void zombieAdyacente() {
+		//mirar si el zombie esta en una casilla cerca de algo para hacer daño
+	}
+	
 }

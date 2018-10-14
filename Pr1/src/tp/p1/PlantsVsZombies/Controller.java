@@ -38,15 +38,28 @@ public class Controller {
 						"[P]eashooter: Cost: 50 suncoins Harm: 1");
 			}
 			else if (command[0].equals("ADD")) {
-				
+				/*Este es un comando para añadir una nueva planta de tipo
+				plant en la casilla x, y. Obviamente el usuario solo podrá añadir una planta por ciclo
+				si tiene el número suficiente de soles. No podrá añadir una planta en una casilla
+				ocupada por otra planta o por un zombi.*/
+								
 			}
 			else if (command[0].equals("RESET")) {
+				//Este comando permite reiniciar la partida, llevando al juego a la configuración
+				//inicial.
+				//borrar el juego llamando al game para que cree un nuevo juego?
+				
 				
 			}
 			else if (command[0].equals("NONE")) {
+				//El usuario no realiza ninguna acción.
+
 				
 			}
 			else if (command[0].equals("EXIT")) {
+				//Este comando permite salir de la aplicación, mostrando previamente el mensaje
+				//“Game Over”.
+
 				
 			}
 			else System.out.println("error");

@@ -59,6 +59,7 @@ public class Zombie {
 		//en este metodo se movera el zombie si le toca o no
 		// y se actualiza la informacion del zombie 
 		
+		
 	}
 	
 }

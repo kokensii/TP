@@ -20,7 +20,7 @@ public class GamePrinter{
 		board = new String[dimX][dimY];
 		for(int i = 0; i < dimX; i++) {
 			for(int j = 0; j < dimY; j++) {
-				
+			
 				board[i][j] =  space;
 				//llegar a las listas con el game. ...
 				// TODO Fill the board with simulation objects
