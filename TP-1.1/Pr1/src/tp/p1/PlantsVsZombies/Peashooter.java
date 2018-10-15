@@ -63,6 +63,12 @@ public class Peashooter {
 		
 	}
 	
+	public String toString() {
+		String peashooter;
+		peashooter= "P[" + this.getHp() + "]";
+		return peashooter;
+	}
+	
 	
 	
 }

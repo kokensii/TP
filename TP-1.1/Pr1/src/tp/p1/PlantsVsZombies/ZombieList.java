@@ -32,10 +32,18 @@ public class ZombieList {
 	
 	public boolean isZombie(int x, int y) {
 		boolean isZ = false;
-		for(int i = 0; i < zombieList.size() && !isZ; ++i){
+	/*	for(int i = 0; i < getSize(); ++i){
 			if(zombieList.get(i).getX() == x && zombieList.get(i).getY() == y) isZ = true;
-		}
+		}*/
 		return isZ;
+	}
+	
+	public void restarVida(int x, int y) {
+		for(int i = 0; i < zombieList.size(); ++i){
+			if(zombieList.get(i).getX() == x && zombieList.get(i).getY() == y) {
+				zombieList.get(i).setHp(zombieList.get(i).getHp()-1);
+			}
+		}
 	}
 
 }

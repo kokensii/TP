@@ -10,16 +10,18 @@ public class Controller {
 	
 	public Controller(Game game) {
 		this.game = game;
-		this.in = in;
+		this.in = new Scanner(System.in);
 	}
 	
 	public void run() { // solicitar ordenes al usuario y ejecutarlas
 		String parts;
 		String[] command;
 		
-		System.out.println(game.toString()); // imprimir el tablero
-		
+		 // imprimir el tablero
+		boolean salir = true;
 		do {
+		
+			System.out.println(game.toString());
 			System.out.println("Command >");
 			parts = this.in.nextLine();
 			parts = parts.toUpperCase();
@@ -38,19 +40,49 @@ public class Controller {
 						"[P]eashooter: Cost: 50 suncoins Harm: 1");
 			}
 			else if (command[0].equals("ADD")) {
+				int x = Integer.parseInt(command[2]);
+				int y = Integer.parseInt(command[3]);
+				String tipo = command[1];
 				
+				if(tipo.equals("SUNFLOWER")) {
+					Sunflower s = new Sunflower(x,y,game);
+					if(game.isEmpty(x, y)) {
+						game.sunflowerList.add(s);
+					}
+				}else if(tipo.equals("Peashooter")) {
+					Peashooter p = new Peashooter(x, y, game);
+					if(game.isEmpty(x, y)) {
+						game.peashooterList.add(x, y, game);
+					}
+				}
+				
+				
+				/*Este es un comando para añadir una nueva planta de tipo
+				plant en la casilla x, y. Obviamente el usuario solo podrá añadir una planta por ciclo
+				si tiene el número suficiente de soles. No podrá añadir una planta en una casilla
+				ocupada por otra planta o por un zombi.*/
+								
 			}
 			else if (command[0].equals("RESET")) {
+				//Este comando permite reiniciar la partida, llevando al juego a la configuración
+				//inicial.
+				//borrar el juego llamando al game para que cree un nuevo juego?
+				
 				
 			}
 			else if (command[0].equals("NONE")) {
+				//El usuario no realiza ninguna acción.
+
 				
 			}
 			else if (command[0].equals("EXIT")) {
+				//Este comando permite salir de la aplicación, mostrando previamente el mensaje
+				//“Game Over”.
+				salir = false;
 				
 			}
 			else System.out.println("error");
-		}while(0 == 1);
+		}while(salir);
 		
 	}
 	

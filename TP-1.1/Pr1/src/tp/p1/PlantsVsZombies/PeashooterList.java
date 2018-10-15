@@ -43,4 +43,6 @@ public class PeashooterList {
 	//LOS METODOS O MOVIMIENTOS DE LOS ARRAYS DONDE VAN?
 	
 
+	
+
 }

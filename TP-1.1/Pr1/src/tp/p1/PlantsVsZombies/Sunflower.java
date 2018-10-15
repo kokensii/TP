@@ -62,11 +62,21 @@ public class Sunflower {
 		return suns;
 	}*/
 	
+	//en este metodo se generara el numero de soles por ciclo que sea 
+			// y se actualizara la informacion del girasol 
 	public void update(){
-		//en este metodo se generara el numero de soles por ciclo que sea 
-		// y se actualizara la informacion del girasol 
-	
-		
+		int cycles = this.game.getContCycles();
+			if(cycles == 0) {
+				cycles = 1;
+			}
+			if(cycles/2 ==0) {
+				this.game.setContCycles(cycles + 10);
+			}
 	}
 	
+	public String toString() {
+		String sunflower;
+		sunflower= "S[" + this.getHp() + "]";
+		return sunflower;
+	}
 }

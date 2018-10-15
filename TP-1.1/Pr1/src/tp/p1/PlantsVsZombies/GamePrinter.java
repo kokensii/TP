@@ -13,6 +13,7 @@ public class GamePrinter{
 	public GamePrinter(Game game, int dimX, int dimY) {
 		this.dimX = dimX;
 		this.dimY = dimY;
+		
 		encodeGame(game);
 	}
 	
@@ -21,7 +22,9 @@ public class GamePrinter{
 		for(int i = 0; i < dimX; i++) {
 			for(int j = 0; j < dimY; j++) {
 				
-				board[i][j] =  space;
+				board[i][j] =  game.pintarTablero(i, j);
+				// no se si esta bien 
+				//pero hay que llamar al toString de zombie.. para pintar el objeto de esta casilla 
 				//llegar a las listas con el game. ...
 				// TODO Fill the board with simulation objects
 				

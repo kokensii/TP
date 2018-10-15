@@ -4,9 +4,9 @@ import java.util.Random;
 
 public class Game {
 	
-	private SunflowerList sunflowerList;
-	private PeashooterList peashooterList;
-	private ZombieList zombieList;
+	public SunflowerList sunflowerList;
+	public PeashooterList peashooterList;
+	public ZombieList zombieList;
 	private int contCycles;
 	private SuncoinManager managerSuns;
 	private ZombieManager managerZombie;
@@ -17,11 +17,34 @@ public class Game {
 	public Game(Level level, Random rand) {
 		this.level = level;
 		this.contCycles = 0;
+		initZombieList();
+		initPeashooterList();
+		initSunflowerList();
+		initSuncoinManager();
+		initZombieManager();
+		this.gamePrinter = new GamePrinter(this, 4, 8);
+		
 	}
 	
 	public void update() {
 		//Actualizar el tablero recorriendo las listas
 		//PISTAS PARA REALIZAR EL UPDATE, PREGUNTAR EN TUTORIA
+	}
+	
+	public int getContCycles() {
+		return contCycles;
+	}
+
+	public void setContCycles(int contCycles) {
+		this.contCycles = contCycles;
+	}
+
+	public Level getLevel() {
+		return level;
+	}
+
+	public void setLevel(Level level) {
+		this.level = level;
 	}
 	
 	//PREGUNTAR TUTORIA
@@ -83,14 +106,52 @@ public class Game {
 	
 	//mirar porque esta mal creo, no se si puede valer 
 	public void boom() { // intento de lanzar el guisante 
-		for(int i = 1; i < gamePrinter.board.size();i++) {
-			for(int j = 1; j < gamePrinter.board.size();j++) {
+		for(int i = 1; i < gamePrinter.board.length;i++) {
+			for(int j = 1; j < gamePrinter.board.length;j++) {
 				if(gamePrinter.board[i][j].equals(isZombie(i,j))) {
-					//quitarle vida al zombie 
+					this.zombieList.restarVida(i, j);
 				}
 			}
 		}
 	}
 	
-
+	public void avanzarZombie() {
+		// pensar como hacer para avanzar el zombie,
+		//si este metodo es para uno o para todos?
+		//recorriendo el tablero y si es zombie y esta en el ciclo
+		//correcto avanzamos? o como?
+		
+		
+	}
+	
+	public void zombieAdyacente() {
+		//mirar si el zombie esta en una casilla cerca de algo para hacer daño
+	}
+	
+	
+	public String pintarTablero(int x, int y) {
+		
+		
+		if(zombieList.isZombie(x,y)) {
+			Zombie z = new Zombie(x, y, this);
+			return z.toString();
+		}
+		
+		if(peashooterList.isPeashooter(x, y)) {
+			Peashooter p = new Peashooter(x, y, this);
+			return p.toString();
+		}
+		
+		if(sunflowerList.isSunflower(x, y)) {
+			Sunflower s = new Sunflower(x, y, this);
+			return s.toString();
+		}else {
+			return " ";
+		}
+		
+		
+		
+		
+		
+	}
 }
