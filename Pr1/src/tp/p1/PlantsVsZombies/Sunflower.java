@@ -73,4 +73,10 @@ public class Sunflower {
 				this.game.setContCycles(cycles + 10);
 			}
 	}
+	
+	public String toString() {
+		String sunflower;
+		sunflower= "S[" + this.getHp() + "]";
+		return sunflower;
+	}
 }

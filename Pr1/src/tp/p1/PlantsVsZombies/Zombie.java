@@ -62,4 +62,10 @@ public class Zombie {
 		
 	}
 	
+	public String toString() {
+		String zombie;
+		zombie= "Z[" + this.getHp() + "]";
+		return zombie;
+	}
+	
 }
