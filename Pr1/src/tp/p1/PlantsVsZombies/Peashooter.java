@@ -59,7 +59,19 @@ public class Peashooter {
 		// E INCREMENTR LA Y MIRANDO SI EN ESA CASILLA HAY ZOMBIE 
 		//PARA RESTARLE VIDA 
 		//pero no se si se hace aqui o se llama al game y que el game tenga el metodo 
-		game.boom();
+		//game.boom(this.y);
+		boolean disparo = false;
+		for(int i = (this.x + 1); i < game.getGamePrinter().getX() && !disparo; i++) {
+			int indexZ = game.getZombieList().indexZombie(i, this.y);
+			if(indexZ != -1) {
+				game.getZombieList().restarLife(indexZ);
+				disparo = true;
+				if(game.getZombieList().getZombie(indexZ).getHp() == 0) game.getZombieList().delete(indexZ);
+			}
+		}
+		/*Lo hace el zombie
+		 * if(this.x - 1 >= 0 && game.isZombie(this.x - 1, this.y)) this.hp--;
+		if(this.x + 1 < game.getGamePrinter().getX() && game.isZombie(this.x + 1, this.y)) this.hp--;*/
 		
 	}
 	
@@ -68,7 +80,5 @@ public class Peashooter {
 		peashooter= "P[" + this.getHp() + "]";
 		return peashooter;
 	}
-	
-	
 	
 }

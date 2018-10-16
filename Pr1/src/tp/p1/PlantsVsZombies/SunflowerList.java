@@ -17,9 +17,25 @@ public class SunflowerList {
 		this.cont++;
 	}
 	
-	public void delete(int x, int y) { //Mirarlo bien
-		sunflowerList.remove(this.cont);
+	public void delete(int index) { //Mirarlo bien
+		sunflowerList.remove(index);
 		this.cont--;
+	}
+	
+	public void restarLife(int index){
+		sunflowerList.get(index).setHp(sunflowerList.get(index).getHp()-1);
+	}
+	
+	public int indexSunflower(int x, int y){
+		int isP = -1;
+		for(int i = 0; i < sunflowerList.size() && isP == -1; ++i){
+			if(sunflowerList.get(i).getX() == x && sunflowerList.get(i).getY() == y) isP = i;
+		}
+		return isP;
+	}
+	
+	public Sunflower geetSunflower(int index){
+		return this.sunflowerList.get(index);
 	}
 	
 	public int getSize() {
@@ -38,5 +54,10 @@ public class SunflowerList {
 		return isS;
 	}
 	
+	public void update(){
+		for(int i = 0; i < sunflowerList.size(); ++i){
+			sunflowerList.get(i).update();
+		}
+	}
 
 }

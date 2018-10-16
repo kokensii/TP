@@ -17,11 +17,20 @@ public class Game {
 	public Game(Level level, Random rand) {
 		this.level = level;
 		this.contCycles = 0;
+		this.initPeashooterList();
+		this.initSunflowerList();
+		this.initZombieList();
+		this.initSuncoinManager();
+		this.initZombieManager();
 	}
 	
 	public void update() {
 		//Actualizar el tablero recorriendo las listas
 		//PISTAS PARA REALIZAR EL UPDATE, PREGUNTAR EN TUTORIA
+		sunflowerList.update();
+		peashooterList.update();
+		zombieList.update();
+		//llamar al zombie manager
 	}
 	
 	public int getContCycles() {
@@ -83,42 +92,50 @@ public class Game {
 	}
 	
 	private void initZombieManager() {
-		this.managerZombie = new ZombieManager(level);
+		this.managerZombie = new ZombieManager(level, this.rand);
 	}
 	
 	//mirar porque esta mal creo no se si puede servir 
-	public boolean DarBolazo(int x, int y) {
+	/*public boolean DarBolazo(int x, int y) {
 		boolean si = false;
 		//quiero ver si hay un zombie pero creo que esta mal puesto 
-		if(gamePrinter.board[x][y].equals(zombieList/*Zombie*/)) {
+		if(gamePrinter.board[x][y].equals(zombieList/*Zombie)) {
 			si = true; // se manda el true para dar el bolazo si es un zombie 
 		}
 		
 		return si;
+	}*/
+	
+	public GamePrinter getGamePrinter(){
+		return this.gamePrinter;
+	}
+	
+	public ZombieList getZombieList(){
+		return this.zombieList;
+	}
+	
+	public PeashooterList getPeashooterList(){
+		return this.peashooterList;
+	}
+	
+	public SunflowerList getSunfloweList(){
+		return this.sunflowerList;
 	}
 	
 	//mirar porque esta mal creo, no se si puede valer 
-	public void boom() { // intento de lanzar el guisante 
-		for(int i = 1; i < gamePrinter.board.length;i++) {
-			for(int j = 1; j < gamePrinter.board.length;j++) {
-				if(gamePrinter.board[i][j].equals(isZombie(i,j))) {
-					this.zombieList.restarVida(i, j);
-				}
+	public void boom(int f) { // intento de lanzar el guisante 
+		for(int i = 1; i < gamePrinter.getX(); i++) {
+			if(gamePrinter.getBoard()[f][i].equals(isZombie(f, i))) {
+				this.zombieList.restarVida(f, i);
 			}
 		}
 	}
-	
-	public void avanzarZombie() {
-		// pensar como hacer para avanzar el zombie,
-		//si este metodo es para uno o para todos?
-		//recorriendo el tablero y si es zombie y esta en el ciclo
-		//correcto avanzamos? o como?
-		
-		
+
+	public SuncoinManager getSuncoins(){
+		return this.managerSuns;
 	}
 	
-	public void zombieAdyacente() {
-		//mirar si el zombie esta en una casilla cerca de algo para hacer daño
+	public ZombieManager getZombies(){
+		return this.managerZombie;
 	}
-	
 }

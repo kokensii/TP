@@ -6,8 +6,9 @@ public class Sunflower {
 	static final int FREQUENCY = 2;
 	static final int DAMAGE = 0;
 	static final int COST = 20;
+	static final int INCREMENT = 10;
 	
-	private int x, y, hp;
+	private int x, y, hp, instant;
 	private Game game;
 	
 	public Sunflower(int x, int y,Game game) {
@@ -15,6 +16,7 @@ public class Sunflower {
 		this.y = y;
 		this.hp = STRENGHT;
 		this.game = game;
+		this.instant = 0;
 	}
 
 	public int getX() {
@@ -65,13 +67,11 @@ public class Sunflower {
 	//en este metodo se generara el numero de soles por ciclo que sea 
 			// y se actualizara la informacion del girasol 
 	public void update(){
-		int cycles = this.game.getContCycles();
-			if(cycles == 0) {
-				cycles = 1;
-			}
-			if(cycles/2 ==0) {
-				this.game.setContCycles(cycles + 10);
-			}
+		this.instant++;
+		if(instant % FREQUENCY == 0) game.getSuncoins().sumarSoles(INCREMENT);
+		/*Lo hace el zombie
+		 * if(this.x - 1 >= 0 && game.isZombie(this.x - 1, this.y)) this.hp--;
+		if(this.x + 1 < game.getGamePrinter().getX() && game.isZombie(this.x + 1, this.y)) this.hp--;*/
 	}
 	
 	public String toString() {

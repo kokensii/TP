@@ -42,7 +42,21 @@ public class Controller {
 				plant en la casilla x, y. Obviamente el usuario solo podrá añadir una planta por ciclo
 				si tiene el número suficiente de soles. No podrá añadir una planta en una casilla
 				ocupada por otra planta o por un zombi.*/
-								
+				if(command.length != 4)System.out.println("ERROR en el número de comandos");
+				else{
+					//comprobar que x e y esten dentro de los rangos y que las posiciones no esten llenas
+					int x = Integer.parseInt(command[2]);
+					int y = Integer.parseInt(command[3]);
+					if(command[1].equalsIgnoreCase("sunflower") || command[1].equalsIgnoreCase("s")){
+						game.getSunfloweList().add(x, y, game);
+					}
+					else if(command[1].equalsIgnoreCase("peashooter") || command[1].equalsIgnoreCase("p")){
+						game.getPeashooterList().add(x, y, game);
+					}
+					else{
+						System.out.println("ERROR tipo de planta no válido");
+					}
+				}
 			}
 			else if (command[0].equals("RESET")) {
 				//Este comando permite reiniciar la partida, llevando al juego a la configuración

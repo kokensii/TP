@@ -1,5 +1,6 @@
 package tp.p1.PlantsVsZombies;
 
+import java.util.Calendar;
 import java.util.Random;
 
 public class ZombieManager { // clase que lleva el control del numero de zombies que quedan por salir
@@ -8,8 +9,9 @@ public class ZombieManager { // clase que lleva el control del numero de zombies
 	private int numZombies;
 	private Random rand;
 	
-	public ZombieManager(Level level) {
+	public ZombieManager(Level level, Random rand) {
 		this.level = level;
+		this.rand = rand;
 	}
 	
 	public void initZombies() { //Inicializamos el numero de zombies segun la dificultad
@@ -17,14 +19,14 @@ public class ZombieManager { // clase que lleva el control del numero de zombies
 	}
 
 	public boolean isZombieAdded() {  // revisar porque ahora mismo se esta pasando el num de zombies totales, y hay que llevar un cont, revisar
-		boolean zombiesss;
-		numZombies= level.getNumZombies();
-		// hay que traer un cont del num de zombies 
-		if(numZombies > 0) {
-			zombiesss = true;
-		}
-		else zombiesss = false;
+		boolean zombie = false;
+		long number = rand.nextLong();
 		
-		return zombiesss;
+		if(number <= level.getFrequency()){
+			zombie = true;
+			this.numZombies--;
+		}
+		
+		return zombie;
 	}
 }

@@ -4,11 +4,10 @@ import tp.p1.util.MyStringUtils;
 
 
 public class GamePrinter{
-	int dimX; 
-	int dimY;
-	String[][] board;
+	private int dimX; 
+	private int dimY;
+	private String[][] board;
 	final String space = " ";
-	
 	
 	public GamePrinter(Game game, int dimX, int dimY) {
 		this.dimX = dimX;
@@ -54,6 +53,18 @@ public class GamePrinter{
 				str.append(lineDelimiter);
 		}
 		return str.toString();
+	}
+	
+	public int getX(){
+		return this.dimX;
+	}
+	
+	public int getY(){
+		return this.dimY;
+	}
+	
+	public String[][] getBoard(){
+		return this.board;
 	}
 }
 
