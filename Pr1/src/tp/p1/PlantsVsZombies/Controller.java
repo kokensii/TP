@@ -6,8 +6,7 @@ public class Controller {
 	
 	private Game game;
 	private Scanner in;
-	// private GamePrinter g;
-	//hay que hacer un set in con el Scanner???
+
 	
 	public Controller(Game game) {
 		this.game = game;

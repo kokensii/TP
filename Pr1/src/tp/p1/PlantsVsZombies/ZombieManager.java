@@ -12,6 +12,7 @@ public class ZombieManager { // clase que lleva el control del numero de zombies
 	public ZombieManager(Level level, Random rand) {
 		this.level = level;
 		this.rand = rand;
+		initZombies();
 	}
 	
 	public void initZombies() { //Inicializamos el numero de zombies segun la dificultad
@@ -20,13 +21,12 @@ public class ZombieManager { // clase que lleva el control del numero de zombies
 
 	public boolean isZombieAdded() {  // revisar porque ahora mismo se esta pasando el num de zombies totales, y hay que llevar un cont, revisar
 		boolean zombie = false;
-		long number = rand.nextLong();
+		float num = (float) (Math.random()*1);
 		
-		if(number <= level.getFrequency()){
+		if(0.1 <= level.getFrequency()){
 			zombie = true;
 			this.numZombies--;
 		}
-		
 		return zombie;
 	}
 }

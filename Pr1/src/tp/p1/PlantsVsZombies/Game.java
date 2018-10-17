@@ -10,7 +10,7 @@ public class Game {
 	private int contCycles;
 	private SuncoinManager managerSuns;
 	private ZombieManager managerZombie;
-	private Random rand;
+	private Random aleatorio = new Random(System.currentTimeMillis());
 	private Level level;
 	private GamePrinter gamePrinter;
 	
@@ -28,6 +28,12 @@ public class Game {
 	public void update() {
 		//Actualizar el tablero recorriendo las listas
 		//PISTAS PARA REALIZAR EL UPDATE, PREGUNTAR EN TUTORIA
+		if(managerZombie.isZombieAdded()) {
+			int valorEntero = (int) Math.floor(Math.random()*(0-3+1)+3);  // Valor entre M y N, ambos incluidos
+			Zombie z = new Zombie(valorEntero,7,this); //para que lo meta en la ultima fila 
+			this.getZombieList().add(z);
+			}
+		
 		sunflowerList.update();
 		peashooterList.update();
 		zombieList.update();
@@ -36,11 +42,16 @@ public class Game {
 			for(int j = 0; j < gamePrinter.getY(); j++) {
 				gamePrinter.getBoard()[i][j] =  pintarTablero(i, j);
 			}
-			
+		}
+		/*ZombieManager z;
+		if(z.isZombieAdded()) {
+			Zombie z= new Zombie(x, y, this);
+			zombieList.add(z);
+		}*/
+	
 		this.contCycles++;
 		//llamar al zombie manager
 		//sumar cont 
-		}
 	}
 	
 	public int getContCycles() {
@@ -102,7 +113,7 @@ public class Game {
 	}
 	
 	private void initZombieManager() {
-		this.managerZombie = new ZombieManager(level, this.rand);
+		this.managerZombie = new ZombieManager(level, this.aleatorio);
 	}
 	
 	//mirar porque esta mal creo no se si puede servir 

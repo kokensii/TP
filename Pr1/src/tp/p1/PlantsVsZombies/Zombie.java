@@ -48,18 +48,10 @@ public class Zombie {
 		this.game = game;
 	}
 	
-	public void moveZombie() {
-		
-	}
-	
-	public void restarOSumarVida() {
-		
-	}
-	
 	public void update(){ // Cuando el zombie llegue al final de la fila la partida se acabará
 		this.instant++;
 		if(this.instant % SPEED == 0 && !game.getPeashooterList().isPeashooter(this.x - 1, y)
-			&& !game.getSunfloweList().isSunflower(this.x - 1, y)) this.x--;
+			&& !game.getSunfloweList().isSunflower(this.x - 1, y)) this.y--;//estaba puesta la x y es la y 
 		else{
 			int indexP = game.getPeashooterList().indexPeashooter(this.x - 1, y);
 			int indexS = game.getSunfloweList().indexSunflower(this.x - 1, y);
