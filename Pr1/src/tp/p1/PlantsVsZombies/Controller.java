@@ -6,6 +6,7 @@ public class Controller {
 	
 	private Game game;
 	private Scanner in;
+	// private GamePrinter g;
 	//hay que hacer un set in con el Scanner???
 	
 	public Controller(Game game) {
@@ -17,11 +18,11 @@ public class Controller {
 		String parts;
 		String[] command;
 		
-		 // imprimir el tablero
+		// imprimir el tablero
+		System.out.println(game.toString());
 		boolean salir = true;
 		
 		do {
-			System.out.println(game.toString());
 			System.out.println("Command >");
 			parts = this.in.nextLine();
 			parts = parts.toUpperCase();
@@ -34,10 +35,12 @@ public class Controller {
 						"Help: Prints this help message.\r\n" +
 						"Exit: Terminates the program.\r\n" + 
 						"[none]: Skips cycle.\r\n");
+				System.out.println(game.toString());
 			}
 			else if(command[0].equals("LIST")) {
 				System.out.println("[S]unflower: Cost: 20 suncoins Harm: 0\r\n" + 
 						"[P]eashooter: Cost: 50 suncoins Harm: 1");
+				System.out.println(game.toString());
 			}
 			else if (command[0].equals("ADD")) {
 				/*Este es un comando para añadir una nueva planta de tipo
@@ -52,11 +55,15 @@ public class Controller {
 					if(command[1].equalsIgnoreCase("sunflower") || command[1].equalsIgnoreCase("s")){
 						Sunflower s = new Sunflower(x,y,game);
 						game.getSunfloweList().add(s);;
-						System.out.println(game.sunflowerList.getSize());
+						game.update();
+						System.out.println(game.toString());
+						
 					}
 					else if(command[1].equalsIgnoreCase("peashooter") || command[1].equalsIgnoreCase("p")){
 						Peashooter p = new Peashooter(x, y, game);
 						game.getPeashooterList().add(p);
+						game.update();
+						System.out.println(game.toString());
 					}
 					else{
 						System.out.println("ERROR tipo de planta no válido");

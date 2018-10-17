@@ -31,7 +31,16 @@ public class Game {
 		sunflowerList.update();
 		peashooterList.update();
 		zombieList.update();
+		
+		for(int i = 0; i < gamePrinter.getX(); i++) {
+			for(int j = 0; j < gamePrinter.getY(); j++) {
+				gamePrinter.getBoard()[i][j] =  pintarTablero(i, j);
+			}
+			
+		this.contCycles++;
 		//llamar al zombie manager
+		//sumar cont 
+		}
 	}
 	
 	public int getContCycles() {

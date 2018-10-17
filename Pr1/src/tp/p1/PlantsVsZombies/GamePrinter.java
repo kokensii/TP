@@ -2,7 +2,6 @@ package tp.p1.PlantsVsZombies;
 
 import tp.p1.util.MyStringUtils;
 
-
 public class GamePrinter{
 	private int dimX; 
 	private int dimY;
