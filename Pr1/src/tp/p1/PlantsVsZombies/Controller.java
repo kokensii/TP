@@ -10,16 +10,18 @@ public class Controller {
 	
 	public Controller(Game game) {
 		this.game = game;
-		this.in = in;
+		this.in = new Scanner(System.in);
 	}
 	
 	public void run() { // solicitar ordenes al usuario y ejecutarlas
 		String parts;
 		String[] command;
 		
-		System.out.println(game.toString()); // imprimir el tablero
+		 // imprimir el tablero
+		boolean salir = true;
 		
 		do {
+			System.out.println(game.toString());
 			System.out.println("Command >");
 			parts = this.in.nextLine();
 			parts = parts.toUpperCase();
@@ -48,10 +50,13 @@ public class Controller {
 					int x = Integer.parseInt(command[2]);
 					int y = Integer.parseInt(command[3]);
 					if(command[1].equalsIgnoreCase("sunflower") || command[1].equalsIgnoreCase("s")){
-						game.getSunfloweList().add(x, y, game);
+						Sunflower s = new Sunflower(x,y,game);
+						game.getSunfloweList().add(s);;
+						System.out.println(game.sunflowerList.getSize());
 					}
 					else if(command[1].equalsIgnoreCase("peashooter") || command[1].equalsIgnoreCase("p")){
-						game.getPeashooterList().add(x, y, game);
+						Peashooter p = new Peashooter(x, y, game);
+						game.getPeashooterList().add(p);
 					}
 					else{
 						System.out.println("ERROR tipo de planta no válido");
@@ -73,11 +78,11 @@ public class Controller {
 			else if (command[0].equals("EXIT")) {
 				//Este comando permite salir de la aplicación, mostrando previamente el mensaje
 				//“Game Over”.
-
+				salir = false;
 				
 			}
 			else System.out.println("error");
-		}while(0 == 1);
+		}while(salir);
 		
 	}
 	

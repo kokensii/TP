@@ -12,8 +12,13 @@ public class PeashooterList {
 		cont = 0;
 	}
 	
-	public void add(int x, int y, Game game) {
+	/*public void add(int x, int y, Game game) {
 		peashooterList.add(cont, new Peashooter(x, y, game));
+		this.cont++;
+	}*/
+	
+	public void add(Peashooter p) {
+		peashooterList.add(p);
 		this.cont++;
 	}
 	

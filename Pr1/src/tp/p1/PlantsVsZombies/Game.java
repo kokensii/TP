@@ -4,9 +4,9 @@ import java.util.Random;
 
 public class Game {
 	
-	private SunflowerList sunflowerList;
-	private PeashooterList peashooterList;
-	private ZombieList zombieList;
+	public SunflowerList sunflowerList;
+	public PeashooterList peashooterList;
+	public ZombieList zombieList;
 	private int contCycles;
 	private SuncoinManager managerSuns;
 	private ZombieManager managerZombie;
@@ -17,11 +17,12 @@ public class Game {
 	public Game(Level level, Random rand) {
 		this.level = level;
 		this.contCycles = 0;
-		this.initPeashooterList();
-		this.initSunflowerList();
-		this.initZombieList();
-		this.initSuncoinManager();
-		this.initZombieManager();
+		initZombieList();
+		initPeashooterList();
+		initSunflowerList();
+		initSuncoinManager();
+		initZombieManager();
+		this.gamePrinter = new GamePrinter(this, 4, 8);
 	}
 	
 	public void update() {
@@ -123,13 +124,13 @@ public class Game {
 	}
 	
 	//mirar porque esta mal creo, no se si puede valer 
-	public void boom(int f) { // intento de lanzar el guisante 
+	/*public void boom(int f) { // intento de lanzar el guisante 
 		for(int i = 1; i < gamePrinter.getX(); i++) {
 			if(gamePrinter.getBoard()[f][i].equals(isZombie(f, i))) {
 				this.zombieList.restarVida(f, i);
 			}
 		}
-	}
+	}*/
 
 	public SuncoinManager getSuncoins(){
 		return this.managerSuns;
@@ -137,5 +138,24 @@ public class Game {
 	
 	public ZombieManager getZombies(){
 		return this.managerZombie;
+	}
+	
+	public String pintarTablero(int x, int y) {
+			if(zombieList.isZombie(x,y)) {
+				Zombie z = new Zombie(x, y, this);
+				return z.toString();
+			}
+			
+			if(peashooterList.isPeashooter(x, y)) {
+				Peashooter p = new Peashooter(x, y, this);
+				return p.toString();
+			}
+			
+			if(sunflowerList.isSunflower(x, y)) {
+				Sunflower s = new Sunflower(x, y, this);
+				return s.toString();
+			}else {
+				return " ";
+			}
 	}
 }
