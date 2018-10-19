@@ -29,10 +29,16 @@ public class Game {
 		//Actualizar el tablero recorriendo las listas
 		//PISTAS PARA REALIZAR EL UPDATE, PREGUNTAR EN TUTORIA
 		if(managerZombie.isZombieAdded()) {
-			int valorEntero = (int) Math.floor(Math.random()*(0-3+1)+3);  // Valor entre M y N, ambos incluidos
-			Zombie z = new Zombie(valorEntero,7,this); //para que lo meta en la ultima fila 
-			this.getZombieList().add(z);
-			}
+			boolean added = false;
+			do{
+				int valorEntero = (int) Math.floor(Math.random()*(0-3+1)+3);  // Valor entre M y N, ambos incluidos
+				if(isEmpty(valorEntero, 7)){
+					Zombie z = new Zombie(valorEntero,7,this); //para que lo meta en la ultima fila 
+					this.getZombieList().add(z);
+					added = true;
+				}
+			}while(!added);
+		}
 		
 		sunflowerList.update();
 		peashooterList.update();
@@ -76,7 +82,7 @@ public class Game {
 	}
 	
 	public boolean isEmpty(int x, int y) {
-		if(!peashooterList.isPeashooter(x, y) || !sunflowerList.isSunflower(x, y) ||
+		if(!peashooterList.isPeashooter(x, y) && !sunflowerList.isSunflower(x, y) &&
 			!zombieList.isZombie(x, y)) return true;
 		return false;
 	}
@@ -115,17 +121,6 @@ public class Game {
 	private void initZombieManager() {
 		this.managerZombie = new ZombieManager(level, this.aleatorio);
 	}
-	
-	//mirar porque esta mal creo no se si puede servir 
-	/*public boolean DarBolazo(int x, int y) {
-		boolean si = false;
-		//quiero ver si hay un zombie pero creo que esta mal puesto 
-		if(gamePrinter.board[x][y].equals(zombieList/*Zombie)) {
-			si = true; // se manda el true para dar el bolazo si es un zombie 
-		}
-		
-		return si;
-	}*/
 	
 	public GamePrinter getGamePrinter(){
 		return this.gamePrinter;

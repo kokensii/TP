@@ -47,39 +47,39 @@ public class Controller {
 				System.out.println(game.toString());
 			}
 			else if (command[0].equals("ADD")) {
-				/*Este es un comando para añadir una nueva planta de tipo
-				plant en la casilla x, y. Obviamente el usuario solo podrá añadir una planta por ciclo
-				si tiene el número suficiente de soles. No podrá añadir una planta en una casilla
-				ocupada por otra planta o por un zombi.*/
 				if(command.length != 4)System.out.println("ERROR en el número de comandos");
 				else{
 					//comprobar que x e y esten dentro de los rangos y que las posiciones no esten llenas
 					int x = Integer.parseInt(command[2]);
 					int y = Integer.parseInt(command[3]);
-					if(command[1].equalsIgnoreCase("sunflower") || command[1].equalsIgnoreCase("s")){
-						if(game.getSuncoins().getSunCoins() >= SUNFLOWER){
-							Sunflower s = new Sunflower(x,y,game);
-							game.getSunfloweList().add(s);
-							game.getSuncoins().restarSoles(SUNFLOWER);
-							game.update();
-						}else{
-							System.out.println("ERROR. No tiene soles suficientes");
+					if(game.isEmpty(x, y)){
+						if(command[1].equalsIgnoreCase("sunflower") || command[1].equalsIgnoreCase("s")){
+							if(game.getSuncoins().getSunCoins() >= SUNFLOWER){
+								Sunflower s = new Sunflower(x,y,game);
+								game.getSunfloweList().add(s);
+								game.getSuncoins().restarSoles(SUNFLOWER);
+								game.update();
+							}else{
+								System.out.println("ERROR. No tiene soles suficientes");
+							}
+							System.out.println(game.toString());
 						}
-						System.out.println(game.toString());
-					}
-					else if(command[1].equalsIgnoreCase("peashooter") || command[1].equalsIgnoreCase("p")){
-						if(game.getSuncoins().getSunCoins() >= PEASHOOTER){
-							Peashooter p = new Peashooter(x, y, game);
-							game.getPeashooterList().add(p);
-							game.getSuncoins().restarSoles(PEASHOOTER);
-							game.update();
-						}else{
-							System.out.println("ERROR. No tienes soles suficientes");
+						else if(command[1].equalsIgnoreCase("peashooter") || command[1].equalsIgnoreCase("p")){
+							if(game.getSuncoins().getSunCoins() >= PEASHOOTER){
+								Peashooter p = new Peashooter(x, y, game);
+								game.getPeashooterList().add(p);
+								game.getSuncoins().restarSoles(PEASHOOTER);
+								game.update();
+							}else{
+								System.out.println("ERROR. No tienes soles suficientes");
+							}
+							System.out.println(game.toString());
 						}
-						System.out.println(game.toString());
-					}
-					else{
-						System.out.println("ERROR tipo de planta no válido");
+						else{
+							System.out.println("ERROR tipo de planta no válido");
+						}
+					}else{
+						System.out.println("ERROR, la posición introducida ya se encuentra ocupada");
 					}
 				}
 			}
@@ -87,7 +87,6 @@ public class Controller {
 				//Este comando permite reiniciar la partida, llevando al juego a la configuración
 				//inicial.
 				//borrar el juego llamando al game para que cree un nuevo juego?
-				
 				
 			}
 			else if (command[0].equals("NONE")) {
@@ -98,6 +97,7 @@ public class Controller {
 			else if (command[0].equals("EXIT")) {
 				//Este comando permite salir de la aplicación, mostrando previamente el mensaje
 				//“Game Over”.
+				
 				salir = false;
 				
 			}
