@@ -5,8 +5,7 @@ public class SuncoinManager { // clase que lleva el control de los suncoins
 	static final int SUNS = 50;
 	private int sunCoins;
 	
-	
-	public void initSuns() { //Inicializamos el numero de soles a 50, que son los predeterminados
+	public SuncoinManager() { //Inicializamos el numero de soles a 50, que son los predeterminados
 		this.sunCoins = 50;
 	}
 	
@@ -16,5 +15,9 @@ public class SuncoinManager { // clase que lleva el control de los suncoins
 	
 	public int sumarSoles(int sunCoinsQueSumar) {
 		return this.sunCoins = this.sunCoins + sunCoinsQueSumar;
+	}
+	
+	public int getSunCoins(){
+		return this.sunCoins;
 	}
 }

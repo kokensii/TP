@@ -12,11 +12,6 @@ public class ZombieList {
 		cont = 0;
 	}
 	
-	/*public void add(int x, int y, Game game) {
-		zombieList.add(cont, new Zombie(x, y, game));
-		this.cont++;
-	}*/
-	
 	public void add(Zombie z) {
 		zombieList.add(z);
 		this.cont++;

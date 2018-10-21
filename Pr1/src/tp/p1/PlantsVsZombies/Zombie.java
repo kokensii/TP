@@ -50,11 +50,11 @@ public class Zombie {
 	
 	public void update(){ // Cuando el zombie llegue al final de la fila la partida se acabará
 		this.instant++;
-		if(this.instant % SPEED == 0 && !game.getPeashooterList().isPeashooter(this.x - 1, y)
-			&& !game.getSunfloweList().isSunflower(this.x - 1, y)) this.y--;//estaba puesta la x y es la y 
+		if(this.instant % SPEED == 0 && !game.getPeashooterList().isPeashooter(this.x, this.y - 1)
+			&& !game.getSunfloweList().isSunflower(this.x, this.y)) this.y--;//estaba puesta la x y es la y 
 		else{
-			int indexP = game.getPeashooterList().indexPeashooter(this.x - 1, y);
-			int indexS = game.getSunfloweList().indexSunflower(this.x - 1, y);
+			int indexP = game.getPeashooterList().indexPeashooter(this.x, this.y - 1);
+			int indexS = game.getSunfloweList().indexSunflower(this.x, this.y - 1);
 			if(indexP != -1){
 				game.getPeashooterList().restarLife(indexP);
 				if(game.getPeashooterList().getPeashooter(indexP).getHp() == 0) game.getPeashooterList().delete(indexP);
@@ -68,7 +68,7 @@ public class Zombie {
 	
 	public String toString() {
 		String zombie;
-		zombie= "Z[" + this.getHp() + "]";
+		zombie= "Z[" + this.hp + "]";
 		return zombie;
 	}
 	

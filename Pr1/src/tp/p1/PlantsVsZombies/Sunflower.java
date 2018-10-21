@@ -55,23 +55,9 @@ public class Sunflower {
 		return COST;
 	}
 	
-	// Metodo para generar soles, habra que verificar si se puede o no generar 
-	/*public int generateSuns(Game game) {
-		int suns = 0;
-		boolean generate;
-		if(cost >= 20) { // mirar si esto va aqui o no 
-		}
-		return suns;
-	}*/
-	
-	//en este metodo se generara el numero de soles por ciclo que sea 
-			// y se actualizara la informacion del girasol 
 	public void update(){
 		this.instant++;
 		if(instant % FREQUENCY == 0) game.getSuncoins().sumarSoles(INCREMENT);
-		/*Lo hace el zombie
-		 * if(this.x - 1 >= 0 && game.isZombie(this.x - 1, this.y)) this.hp--;
-		if(this.x + 1 < game.getGamePrinter().getX() && game.isZombie(this.x + 1, this.y)) this.hp--;*/
 	}
 	
 	public String toString() {

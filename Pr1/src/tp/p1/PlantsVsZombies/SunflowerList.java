@@ -12,11 +12,6 @@ public class SunflowerList {
 		cont = 0;
 	}
 	
-	/*public void add(int x, int y, Game game) {
-		sunflowerList.add(cont, new Sunflower(x, y, game));
-		this.cont++;
-	}*/
-	
 	public void add(Sunflower s) {
 		sunflowerList.add(s);
 		this.cont++;

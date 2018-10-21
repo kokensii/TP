@@ -23,15 +23,14 @@ public class Game {
 		initSuncoinManager();
 		initZombieManager();
 		this.gamePrinter = new GamePrinter(this, 4, 8);
+		this.aleatorio = rand;
 	}
 	
 	public void update() {
-		//Actualizar el tablero recorriendo las listas
-		//PISTAS PARA REALIZAR EL UPDATE, PREGUNTAR EN TUTORIA
 		if(managerZombie.isZombieAdded()) {
 			boolean added = false;
 			do{
-				int valorEntero = (int) Math.floor(Math.random()*(0-3+1)+3);  // Valor entre M y N, ambos incluidos
+				int valorEntero = aleatorio.nextInt(4);
 				if(isEmpty(valorEntero, 7)){
 					Zombie z = new Zombie(valorEntero,7,this); //para que lo meta en la ultima fila 
 					this.getZombieList().add(z);
@@ -49,15 +48,8 @@ public class Game {
 				gamePrinter.getBoard()[i][j] =  pintarTablero(i, j);
 			}
 		}
-		/*ZombieManager z;
-		if(z.isZombieAdded()) {
-			Zombie z= new Zombie(x, y, this);
-			zombieList.add(z);
-		}*/
-	
+		
 		this.contCycles++;
-		//llamar al zombie manager
-		//sumar cont 
 	}
 	
 	public int getContCycles() {
@@ -147,21 +139,59 @@ public class Game {
 	}
 	
 	public String pintarTablero(int x, int y) {
-			/*if(zombieList.isZombie(x,y)) {
-				Zombie z = new Zombie(x, y, this);
-				return z.toString();
-			}*/
 			if(zombieList.isZombie(x,y))
 				return zombieList.getZombie(zombieList.indexZombie(x, y)).toString();
 			
 			if(peashooterList.isPeashooter(x, y)) {
 				return peashooterList.getPeashooter(peashooterList.indexPeashooter(x, y)).toString();
-			}
+				}
 			
 			if(sunflowerList.isSunflower(x, y)) {
 				return sunflowerList.geetSunflower(sunflowerList.indexSunflower(x, y)).toString();
-			}else {
+				}
+			else {
 				return " ";
 			}
+	}
+	
+	public boolean loseGame() {
+		boolean fin = false;
+		for(int i = 0; i < 4 && !fin ;i++) {
+			if(isZombie(i,0)) {
+				fin = true;
+			}
+		}
+		return fin;
+	}
+	
+	public boolean winGame() { 
+		boolean fin = false;
+		if(managerZombie.getNumZombies()== 0) {
+			int numzombies = 0;
+			for (int i = 0; i < gamePrinter.getX(); i++) {
+				for(int j = 0; j < gamePrinter.getY(); j++) {
+					if(isZombie(i, j)) {
+						numzombies++;
+					}
+				}
+			}
+			fin = (numzombies == 0) ? true : false;
+		}
+		return fin;
+	}
+	
+	public void resetGame() {
+		/*for (int i = 0; i < gamePrinter.getX(); i++) {
+			for(int j = 0; j < gamePrinter.getY(); j++) {
+				gamePrinter.getBoard()[i][j] = "";
+			}
+		}*/
+		initZombieList();
+		initPeashooterList();
+		initSunflowerList();
+		initSuncoinManager();
+		initZombieManager();
+		this.gamePrinter = new GamePrinter(this, 4, 8);
+		this.contCycles = 0;
 	}
 }
