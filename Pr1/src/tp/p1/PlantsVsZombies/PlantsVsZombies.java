@@ -1,7 +1,8 @@
+//PlanstVsZombies HECHA POR JAVIER NAVARRO Y JORGE FAJARDO
+
 package tp.p1.PlantsVsZombies;
 
 import java.util.Random;
-import java.util.Scanner;
 
 public class PlantsVsZombies {
 	
@@ -25,7 +26,6 @@ public class PlantsVsZombies {
 			else{
 				seed = new Random().nextInt(1000);
 			}
-			
 			rand = new Random(seed);
 			game = new Game(level, rand);
 			controller = new Controller(game);

@@ -142,13 +142,13 @@ public class Controller {
 			}
 			else {
 				if(game.loseGame()) {
-					System.out.println("HAS PERDIDO ");
+					System.out.println("HAS PERDIDO LO SENTIMOS \n");
 				}
 				else if(game.winGame()) {
-					System.out.println("HAS GANADO EL JUEGO ");
+					System.out.println("HAS GANADO EL JUEGO!! \n");
 				}
 				else 
-					System.out.println("HASTA LUEGO!!");
+					System.out.println("HASTA LUEGO, GRACIAS POR JUGAR \n");
 			}
 		}while(!game.loseGame() && !game.winGame() && salir);
 	}

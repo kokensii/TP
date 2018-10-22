@@ -5,7 +5,7 @@ public enum Level{
 	
 	public int getNumZombies(){
 		int n;
-		if(this == EASY) n = 2;
+		if(this == EASY) n = 3;
 		else if(this == HARD) n = 5;
 		else n = 10;
 		return n;

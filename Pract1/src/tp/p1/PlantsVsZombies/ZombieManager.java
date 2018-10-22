@@ -18,7 +18,7 @@ public class ZombieManager { // clase que lleva el control del numero de zombies
 		this.numZombies = level.getNumZombies();
 	}
 
-	public boolean isZombieAdded() {  // revisar porque ahora mismo se esta pasando el num de zombies totales, y hay que llevar un cont, revisar
+	public boolean isZombieAdded() { 
 		boolean zombie = false;
 		float num = (float) (Math.random()*1);
 		if(num >= level.getFrequency() && numZombies > 0){

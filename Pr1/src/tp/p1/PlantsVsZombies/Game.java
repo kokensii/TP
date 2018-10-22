@@ -45,7 +45,7 @@ public class Game {
 		
 		for(int i = 0; i < gamePrinter.getX(); i++) {
 			for(int j = 0; j < gamePrinter.getY(); j++) {
-				gamePrinter.getBoard()[i][j] =  pintarTablero(i, j);
+				gamePrinter.getBoard()[i][j] =  drawBoard(i, j);
 			}
 		}
 		
@@ -68,7 +68,6 @@ public class Game {
 		this.level = level;
 	}
 	
-	//PREGUNTAR TUTORIA
 	public String toString() {  // este metodo llamara al gameprinter para dibujar el tablero 	
 		return gamePrinter.toString();
 	}
@@ -138,7 +137,7 @@ public class Game {
 		return this.managerZombie;
 	}
 	
-	public String pintarTablero(int x, int y) {
+	public String drawBoard(int x, int y) {
 			if(zombieList.isZombie(x,y))
 				return zombieList.getZombie(zombieList.indexZombie(x, y)).toString();
 			
@@ -181,11 +180,6 @@ public class Game {
 	}
 	
 	public void resetGame() {
-		/*for (int i = 0; i < gamePrinter.getX(); i++) {
-			for(int j = 0; j < gamePrinter.getY(); j++) {
-				gamePrinter.getBoard()[i][j] = "";
-			}
-		}*/
 		initZombieList();
 		initPeashooterList();
 		initSunflowerList();

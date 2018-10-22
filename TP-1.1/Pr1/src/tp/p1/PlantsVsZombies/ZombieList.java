@@ -17,7 +17,7 @@ public class ZombieList {
 		this.cont++;
 	}
 	
-	public void delete(int index) { //Mirarlo bien
+	public void delete(int index) {
 		zombieList.remove(index);
 		this.cont--;
 	}

@@ -18,7 +18,7 @@ public class GamePrinter{
 		board = new String[dimX][dimY];
 		for(int i = 0; i < dimX; i++) {
 			for(int j = 0; j < dimY; j++) {
-				board[i][j] =  game.pintarTablero(i, j);
+				board[i][j] =  game.drawBoard(i, j);
 			}
 		}
 	}

@@ -54,12 +54,12 @@ public class PeashooterList {
 		return isP;
 	}
 	
-	public void restarVidaPeashooter(int x, int y) {
+	/*public void restarLifePeashooter(int x, int y) {
 		int iZ = indexPeashooter(x, y);
 		if(iZ != -1) {
 			peashooterList.get(iZ).setHp(peashooterList.get(iZ).getHp()-1);
 		}
-	}
+	}*/
 	
 	public void update(){
 		for(int i = 0; i < peashooterList.size(); ++i){
